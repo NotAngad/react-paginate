@@ -18,7 +18,6 @@ const App = () => {
 
   const getUserDetail = async () => {
     const userDetail = await axios.get(`https://randomuser.me/api/`);
-    console.log(userDetail.data.results[0]);
     setState({
       ...state,
       user: userDetail?.data?.results[0],
