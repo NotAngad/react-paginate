@@ -1,3 +1,4 @@
+﻿# React Pagination Implementation
 This is a repo to demonstrate how to implement react-paginate to use pagination in your project. 
 
 ** Packages used: ** 
