@@ -4,11 +4,13 @@ import ReactPaginate from "react-paginate";
 import "./App.css";
 
 const App = () => {
+  // State to handle the logic of the component:
   const [state, setState] = useState({
     user: {},
     userId: 1,
   });
 
+  // Function to call every time a page is changed:
   const handlePageChange = (event) => {
     setState({
       ...state,
@@ -16,6 +18,7 @@ const App = () => {
     });
   };
 
+  // Function that will call the info of a user:
   const getUserDetail = async () => {
     const userDetail = await axios.get(`https://randomuser.me/api/`);
     setState({
@@ -24,10 +27,12 @@ const App = () => {
     });
   };
 
+  // ComponentDidMount:
   useEffect(() => {
     getUserDetail();
   }, []);
 
+  // Get user detail every time a page is changed:
   useEffect(() => {
     getUserDetail();
   }, [state.userId]);
